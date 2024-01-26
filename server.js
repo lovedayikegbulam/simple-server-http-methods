@@ -11,8 +11,7 @@ const requestHandler = function (req, res) {
 	if (req.url === "/books" && req.method === "GET") {
 		requestHandlers.getAllBooks(req, res);
 	} else if (req.url === "/books" && req.method === "PUT") {
-		res.write("Hello from PUT /books");
-		res.end();
+		requestHandlers.addBook(req, res);
 	} else if (req.url === "/books" && req.method === "DELETE") {
 		res.write("Hello from DELETE /books");
 		res.end();

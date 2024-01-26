@@ -12,8 +12,19 @@ function readFromFiles(filePath) {
 	});
 };
 
+function writeToBook(filePath, allData) {
+	return new Promise(function (resolve, reject) {
+		const formatedData = JSON.stringify(allData)
+		fs.writeFile(filePath,formatedData, (err) => {
+			if (err) reject(err);
+			resolve(formatedData);
+		});
+	});
+}
+
 module.exports = {
-	readFromFiles
+	readFromFiles,
+	writeToBook
 }
 
 
