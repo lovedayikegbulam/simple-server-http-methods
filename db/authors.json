@@ -1,0 +1,17 @@
+[
+    {
+        "name": "Don Norman",
+        "country": "USA",
+        "id": 1
+    },
+    {
+        "name": "Marijn Haverbeke",
+        "country": "Netherlands",
+        "id": 2
+    },
+    {
+        "name": "Brian Christian and Thomas L. Griffiths",
+        "country": "USA",
+        "id": 3
+    }
+]
