@@ -1,4 +1,5 @@
 const http = require("http");
+const requestHandlers = require("./requestHandlers")
 
 const hostname = "localhost";
 const port = 8000;
@@ -8,8 +9,7 @@ const requestHandler = function (req, res) {
 	res.setHeader("Content-Type", "application/json");
 
 	if (req.url === "/books" && req.method === "GET") {
-		res.write("Hello from GET /books");
-        res.end();
+		requestHandlers.getAllBooks(req, res);
 	} else if (req.url === "/books" && req.method === "PUT") {
 		res.write("Hello from PUT /books");
 		res.end();
