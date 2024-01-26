@@ -3,15 +3,40 @@ const http = require("http");
 const hostname = "localhost";
 const port = 8000;
 
-// Add Request Listener to the server
-const requestListener = function (request, response) {
-	response.writeHead(200); // Status code 200 = OK
-	response.write("Hello World");
-	response.end();
+// Add Request Handler to the server
+const requestHandler = function (req, res) {
+	res.setHeader("Content-Type", "application/json");
+
+	if (req.url === "/books" && req.method === "GET") {
+		res.write("Hello from GET /books");
+        res.end();
+	} else if (req.url === "/books" && req.method === "PUT") {
+		res.write("Hello from PUT /books");
+		res.end();
+	} else if (req.url === "/books" && req.method === "DELETE") {
+		res.write("Hello from DELETE /books");
+		res.end();
+    } else if (req.url === "/books/author" && req.method === "GET") {
+		res.write("Hello from GET /books/author");
+		res.end();
+    } else if (req.url === "/books/author" && req.method === "POST") {
+			res.write("Hello from POST /books/author");
+			res.end();
+		} else if (req.url === "/books/author" && req.method === "PUT") {
+			res.write("Hello from PUT /books/author");
+			res.end();
+		} else {
+			res.writeHead(404);
+			res.end(
+				JSON.stringify({
+					message: "Method Not Supported",
+				})
+			);
+		}
 };
 
 // Create the server
-const server = http.createServer(requestListener);
+const server = http.createServer(requestHandler);
 server.listen(port, hostname, () => {
 	console.log(`Server running at http://${hostname}:${port}/`);
 });
