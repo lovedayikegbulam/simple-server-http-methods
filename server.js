@@ -11,18 +11,15 @@ const requestHandler = function (req, res) {
 	if (req.url === "/books" && req.method === "GET") {
 		requestHandlers.getAllBooks(req, res);
 	} else if (req.url === "/books" && req.method === "PUT") {
-		requestHandlers.addBook(req, res);
+		requestHandlers.updateBook(req, res);
 	} else if (req.url === "/books" && req.method === "DELETE") {
 		requestHandlers.deleteBook(req, res);
     } else if (req.url === "/books/author" && req.method === "GET") {
-		res.write("Hello from GET /books/author");
-		res.end();
+		requestHandlers.getAllAuthor(req, res);
     } else if (req.url === "/books/author" && req.method === "POST") {
-			res.write("Hello from POST /books/author");
-			res.end();
+			requestHandlers.addNewAuthor(req, res);
 		} else if (req.url === "/books/author" && req.method === "PUT") {
-			res.write("Hello from PUT /books/author");
-			res.end();
+			requestHandlers.updateAuthor(req, res);
 		} else {
 			res.writeHead(404);
 			res.end(
