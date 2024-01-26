@@ -13,8 +13,7 @@ const requestHandler = function (req, res) {
 	} else if (req.url === "/books" && req.method === "PUT") {
 		requestHandlers.addBook(req, res);
 	} else if (req.url === "/books" && req.method === "DELETE") {
-		res.write("Hello from DELETE /books");
-		res.end();
+		requestHandlers.deleteBook(req, res);
     } else if (req.url === "/books/author" && req.method === "GET") {
 		res.write("Hello from GET /books/author");
 		res.end();
