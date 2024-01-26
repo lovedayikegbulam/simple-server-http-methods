@@ -4,7 +4,8 @@ This project is an Alt School Africa , software engineering program second semes
 
 ## Getting Started
 
-You can download or clone repository
+You can download or clone repository\
+Note: When testing the PUT and POST methods, make sure you input valid detail format in the body of the request, addittion of id field mandatory
 
 ### Prerequisites
 
