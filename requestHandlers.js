@@ -7,7 +7,7 @@ const getAllBooks = function (req, res) {
 	fileHandler.readFromFiles(booksDbPath).then((response) => {
 		res.writeHead(200);
 		res.end(`${response}`);
-		console.log(response);
+		// console.log(response);
 	});
 };
 
